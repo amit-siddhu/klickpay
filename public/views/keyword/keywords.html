@@ -1,0 +1,181 @@
+<div>
+
+    <h2>Keywords</h2>
+
+    <script type = "text/ng-template" id="keyword-save.html">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="form" role="form" novalidate
+                      class="ng-scope ng-invalid ng-invalid-required ng-dirty"
+                      ng-submit="ok()">
+
+                    <div class="modal-header">
+                        <button type="button" class="close"
+                                ng-click="cancel()">&times;</button>
+                        <h4 class="modal-title" id="myKeywordLabel">Create or edit a Keyword</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="keyword.id" readonly>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label>keyword1:</label>
+                            
+                            <input type="text" class="form-control" name="keyword1"
+                                   ng-model="keyword.keyword1" ng-required="true"
+                                   ng-minlength=2 ng-maxlength=20/>
+                            <span class="error" ng-show="form.keyword1.$error.minlength">Must be at least 2 characters.</span>
+                            <span class="error" ng-show="form.keyword1.$error.maxlength">Must be at most 20 characters.</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>keyword2:</label>
+                            
+                            <input type="text" class="form-control" name="keyword2"
+                                   ng-model="keyword.keyword2" ng-required="true"
+                                   ng-minlength=2 ng-maxlength=20/>
+                            <span class="error" ng-show="form.keyword2.$error.minlength">Must be at least 2 characters.</span>
+                            <span class="error" ng-show="form.keyword2.$error.maxlength">Must be at most 20 characters.</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>keyword3:</label>
+                            
+                            <input type="text" class="form-control" name="keyword3"
+                                   ng-model="keyword.keyword3" ng-required="false"
+                                   ng-minlength=2 ng-maxlength=20/>
+                            <span class="error" ng-show="form.keyword3.$error.minlength">Must be at least 2 characters.</span>
+                            <span class="error" ng-show="form.keyword3.$error.maxlength">Must be at most 20 characters.</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>keyword4:</label>
+                            
+                            <input type="text" class="form-control" name="keyword4"
+                                   ng-model="keyword.keyword4" ng-required="false"
+                                   ng-minlength=2 ng-maxlength=20/>
+                            <span class="error" ng-show="form.keyword4.$error.minlength">Must be at least 2 characters.</span>
+                            <span class="error" ng-show="form.keyword4.$error.maxlength">Must be at most 20 characters.</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>keyword5:</label>
+                            
+                            <input type="text" class="form-control" name="keyword5"
+                                   ng-model="keyword.keyword5" ng-required="false"
+                                   ng-minlength=2 ng-maxlength=20/>
+                            <span class="error" ng-show="form.keyword5.$error.minlength">Must be at least 2 characters.</span>
+                            <span class="error" ng-show="form.keyword5.$error.maxlength">Must be at most 20 characters.</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>keyword6:</label>
+                            
+                            <input type="text" class="form-control" name="keyword6"
+                                   ng-model="keyword.keyword6" ng-required="false"
+                                   ng-minlength=2 ng-maxlength=20/>
+                            <span class="error" ng-show="form.keyword6.$error.minlength">Must be at least 2 characters.</span>
+                            <span class="error" ng-show="form.keyword6.$error.maxlength">Must be at most 20 characters.</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>keyword7:</label>
+                            
+                            <input type="text" class="form-control" name="keyword7"
+                                   ng-model="keyword.keyword7" ng-required="false"
+                                   ng-minlength=2 ng-maxlength=20/>
+                            <span class="error" ng-show="form.keyword7.$error.minlength">Must be at least 2 characters.</span>
+                            <span class="error" ng-show="form.keyword7.$error.maxlength">Must be at most 20 characters.</span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>keyword8:</label>
+                            
+                            <input type="text" class="form-control" name="keyword8"
+                                   ng-model="keyword.keyword8" ng-required="false"
+                                   ng-minlength=2 ng-maxlength=20/>
+                            <span class="error" ng-show="form.keyword8.$error.minlength">Must be at least 2 characters.</span>
+                            <span class="error" ng-show="form.keyword8.$error.maxlength">Must be at most 20 characters.</span>
+                        </div>
+                        
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" ng-click="cancel()">Cancel
+                        </button>
+                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </script>
+
+    <button class="btn btn-primary btn-lg" ng-click="create()">
+        <span class="glyphicon glyphicon-flash"></span> Create a new Keyword
+    </button>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                
+                <th>keyword1</th>
+                
+                <th>keyword2</th>
+                
+                <th>keyword3</th>
+                
+                <th>keyword4</th>
+                
+                <th>keyword5</th>
+                
+                <th>keyword6</th>
+                
+                <th>keyword7</th>
+                
+                <th>keyword8</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="keyword in keywords">
+                <td>{{keyword.id}}</td>
+                
+                <td>{{keyword.keyword1 }}</td>
+                
+                <td>{{keyword.keyword2 }}</td>
+                
+                <td>{{keyword.keyword3 }}</td>
+                
+                <td>{{keyword.keyword4 }}</td>
+                
+                <td>{{keyword.keyword5 }}</td>
+                
+                <td>{{keyword.keyword6 }}</td>
+                
+                <td>{{keyword.keyword7 }}</td>
+                
+                <td>{{keyword.keyword8 }}</td>
+                
+                <td>
+                    <button type="submit"
+                            ng-click="update(keyword.id)"
+                            class="btn">
+                        <span class="glyphicon glyphicon-pencil"></span> Edit
+                    </button>
+                    <button type="submit"
+                            ng-click="delete(keyword.id)"
+                            class="btn btn-danger">
+                        <span class="glyphicon glyphicon-remove-circle"></span> Delete
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

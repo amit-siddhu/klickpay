@@ -1,0 +1,89 @@
+{
+	"baseName": "KlickPay",
+	"orm": "ar",
+	"entities": [
+		{
+			"name": "keyword",
+			"attrs": [
+				{
+					"attrName": "keyword1",
+					"attrType": "String",
+					"minLength": "2",
+					"maxLength": "20",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "keyword2",
+					"attrType": "String",
+					"minLength": "2",
+					"maxLength": "20",
+					"enumValues": [],
+					"required": true
+				},
+				{
+					"attrName": "keyword3",
+					"attrType": "String",
+					"minLength": "2",
+					"maxLength": "20",
+					"enumValues": [],
+					"required": false
+				},
+				{
+					"attrName": "keyword4",
+					"attrType": "String",
+					"minLength": "2",
+					"maxLength": "20",
+					"enumValues": [],
+					"required": false
+				},
+				{
+					"attrName": "keyword5",
+					"attrType": "String",
+					"minLength": "2",
+					"maxLength": "20",
+					"enumValues": [],
+					"required": false
+				},
+				{
+					"attrName": "keyword6",
+					"attrType": "String",
+					"minLength": "2",
+					"maxLength": "20",
+					"enumValues": [],
+					"required": false
+				},
+				{
+					"attrName": "keyword7",
+					"attrType": "String",
+					"minLength": "2",
+					"maxLength": "20",
+					"enumValues": [],
+					"required": false
+				},
+				{
+					"attrName": "keyword8",
+					"attrType": "String",
+					"minLength": "2",
+					"maxLength": "20",
+					"enumValues": [],
+					"required": false
+				}
+			]
+		},
+		{
+			"name": "search",
+			"attrs": [
+				{
+					"attrName": "keyword",
+					"attrType": "String",
+					"minLength": "2",
+					"maxLength": "176",
+					"enumValues": [],
+					"required": true
+				}
+			]
+		}
+	],
+	"resources": []
+}
